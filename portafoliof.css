@@ -1,0 +1,222 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+body {
+  margin-left: 10%;
+ margin-right: 10%;
+  font-family: "Noto Sans";
+  font-size: 1rem; /* 1rem * 16px = 16px */
+  color: #fff;
+  background-color: #ffffff;
+}
+.contexto {
+  padding: 100px;
+  color: #000000;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+.aligncenter {
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+h1 {
+    font-family: "League Spartan";
+    font-size:xx-large;
+}
+.fontprincipal {
+    font-family: "League Spartan";
+    font-size: larger;
+}
+.fontsecundaria {
+    font-family: "Noto Sans";
+}
+.fontmaspequeña {
+  font-size: medium;
+}
+.header {
+    background: #fffefe;
+}
+.boton {
+    color: #000000;
+    background-color: #ab4493;
+    font-weight: bold;
+    padding-left: 0.1px;
+    padding-right: 0.1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border: 10px solid #ab4493;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px auto;
+    font-family: 'League Spartan';
+    font-size:x-large;
+    min-width: 130px;
+}
+.boton a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    color: #ab4493;
+    padding: 10px 20px;
+}
+.centeralign {
+    align-items: center;
+    text-align: center;
+  }
+.button_container {
+    position: fixed;
+    top: 8%;
+    right: 3%;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
+  }
+  .espaciado {
+    padding: 50px;
+    border: 3px solid #ffffff;
+    background-color: #ffffff;
+    border-radius: 30px;
+  }
+  
+  @media (max-width: 768px) { /*media query: reglas para cuando pantalla mida menos de 768px*/ 
+    .button_container {
+        top: 10%;
+        right: 10%;
+    }
+}
+  .button_container:hover {
+    opacity: .7;
+  }
+  .button_container.active .top {
+    transform: translateY(11px) translateX(0) rotate(45deg);
+    background: #ffffff;
+  }
+  .button_container.active .middle {
+    opacity: 0;
+    background: #FFF;
+  }
+  .button_container.active .bottom {
+    transform: translateY(-11px) translateX(0) rotate(-45deg);
+    background: #FFF;
+  }
+  .button_container span {
+    background: #000000;
+    border: none;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .35s ease;
+    cursor: pointer;
+  }
+  .button_container span:nth-of-type(2) {
+    top: 11px;
+  }
+  .button_container span:nth-of-type(3) {
+    top: 22px;
+  }
+  .overlay {
+    position: fixed;
+    background:#ab4493;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
+    overflow: hidden;
+  }
+  .overlay.open {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+  .overlay.open li {
+    animation: fadeInRight .5s ease forwards;
+    animation-delay: .35s;
+  }
+  .overlay.open li:nth-of-type(2) {
+    animation-delay: .4s;
+  }
+  .overlay.open li:nth-of-type(3) {
+    animation-delay: .45s;
+  }
+  .overlay.open li:nth-of-type(4) {
+    animation-delay: .50s;
+  }
+  .overlay nav {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-family: 'League Spartan';
+    font-weight: 400;
+    text-align: center;
+  }
+  .overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+  }
+  .overlay ul li {
+    display: block;
+    height: 25%;
+    height: calc(100% / 4);
+    min-height: 50px;
+    position: relative;
+    opacity: 0;
+  }
+  .overlay ul li a {
+    display: block;
+    position: relative;
+    color: #FFF;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  .overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+    width: 100%;
+  }
+  .overlay ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    transform: translateX(-50%);
+    height: 3px;
+    background: #FFF;
+    transition: .35s;
+  }
+
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      left: 20%;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+  }
+  .margenicono {
+    margin: 10px;
+  }
